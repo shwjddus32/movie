@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .menu {
+        text-align: center;
+        margin-top: 50px;
+      }
+      #movieBoard {
+        width: 90%;
+        border: 1px solid red;
+        margin: 50px auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      #movieBoard .card {
+        width: calc((100% - 60px) / 4);
+        text-align: center;
+      }
+      .imgBox {
+        width: 100%;
+        position: relative;
+      }
+      .imgBox p {
+        position: absolute;
+        color: #fff;
+        display: none;
+      }
+      .imgBox:hover p {
+        display: block;
+      }
+      .imgBox .overview {
+        top: 1rem;
+      }
+      .imgBox .avg {
+        bottom: 1rem;
+        width: 100%;
+        bottom: 1rem;
+        text-align: center;
+        font-size: 0.8rem;
+      }
+      .imgBox .avg span {
+        color: orange;
+        font-size: 0.8rem;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      h2 {
+        font-weight: normal;
+        font-size: 0.8rem;
+      }
+      .search {
+        text-align: center;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="menu">
+      <button onclick="movie('now_playing')">현재상영영화</button>
+      <button onclick="movie('popular')">인기영화</button>
+      <button onclick="movie('top_rated')">추천영화</button>
+      <button onclick="movie('upcoming')">상영예정영화</button>
+    </div>
+
+    <div class="search">
+      <input id="searchInput" placeholder="영화 제목을 입력하세요" />
+      <button id="searchBtn">검색</button>
+    </div>
+
+    <div id="movieBoard"></div>
+    <script src="custom.js"></script>
+  </body>
+</html>
+<!--
+https://developer.themoviedb.org/reference/movie-upcoming-list
+
+-->
